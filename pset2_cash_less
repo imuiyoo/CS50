@@ -1,0 +1,60 @@
+//includes
+#include<stdio.h>
+#include<cs50.h>
+#include<math.h>
+
+
+int coins = 0;
+int quarter = 25;
+int dime = 10;
+int nickel = 5;
+int penny = 1;
+
+int main(void)
+
+//ask for correct input
+{
+    float change;
+    do
+    {
+        change = get_float("Change owed: \n");
+    }
+    while (change < 0);
+    
+    //*100 to simulate dollars to cents and rounding the number to not losing information from truncating float to  int.
+        
+    int cents = round(change * 100);
+    
+    //while loops if larger than sum total of entered amount. 
+    while (cents >= quarter)
+    {
+        cents = (cents - 25);
+        coins++;
+    }
+    while (cents >= dime)
+    {
+        cents = (cents - 10);
+        coins++;
+    }
+    while (cents >= nickel)
+    {
+        cents = (cents - 5);
+        coins++;
+    }
+    while (cents >= penny)
+    {
+        cents = (cents - 1);
+        coins++;
+    
+    }
+
+    printf("%i\n", coins);
+
+}
+
+
+
+
+
+
+   
