@@ -21,7 +21,7 @@ int main(void)
     }
     while (change < 0);
     
-    //*100 to simulate dollars to cents and rounding the number to not losing information from truncating float to  int.
+    //*100 to simulate dollars to cents and rounding the number to not losing information from truncating float to  int. (If you remove round and try 4.2 you will see that it will fail and print out 4.19).
         
     int cents = round(change * 100);
     
